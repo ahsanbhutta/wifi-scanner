@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.6.0.schema.json
+PackageIdentifier: <PUBLISHER>.WiFiScanner
+PackageVersion: 1.0.0
+PackageLocale: en-US
+Publisher: <PUBLISHER>
+PublisherUrl: https://github.com/<OWNER>
+PackageName: WiFi Scanner
+PackageUrl: https://github.com/<OWNER>/wifi-scanner
+License: MIT
+LicenseUrl: https://github.com/<OWNER>/wifi-scanner/blob/main/LICENSE
+ShortDescription: Scan your own WiFi/LAN and identify attached devices with vendor and model info.
+Description: |-
+  Local network device scanner for Windows. Pings and probes your own LAN,
+  resolves vendors via Wireshark's OUI database, and fingerprints devices
+  (mDNS, SSDP, NetBIOS, open ports) into device types and models with
+  confidence levels. Runs a local web dashboard on 127.0.0.1 — no monitor
+  mode, no telemetry, no admin rights required.
+Tags:
+  - wifi
+  - lan
+  - network
+  - scanner
+  - devices
+  - iot
+  - router
+  - OUI
+ManifestType: defaultLocale
+ManifestVersion: 1.6.0

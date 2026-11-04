@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WiFi Scanner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>📡 WiFi Scanner</h1>
+      <span id="net-info" class="muted">no scan yet</span>
+    </div>
+    <div class="controls">
+      <button id="scan-btn">Scan network</button>
+      <label class="chk" title="Re-scan automatically and notify when a new device appears">
+        <input type="checkbox" id="watch-en" /> watch
+      </label>
+      <select id="watch-int" title="Watch interval">
+        <option value="1">every 1 min</option>
+        <option value="5">every 5 min</option>
+        <option value="15" selected>every 15 min</option>
+        <option value="60">every hour</option>
+      </select>
+      <span id="oui-badge" class="badge" title="Vendor (OUI) database">vendor db: …</span>
+    </div>
+  </header>
+
+  <div id="progress-wrap" class="hidden">
+    <div id="progress-bar"></div>
+    <span id="progress-text"></span>
+  </div>
+
+  <div id="alerts" class="hidden"></div>
+
+  <main>
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Devices <span id="dev-count" class="muted"></span></h2>
+        <div class="filters">
+          <input id="search" type="search" placeholder="filter: ip, mac, name, vendor…" />
+          <label class="chk"><input type="checkbox" id="new-only" /> new only</label>
+          <button id="csv-btn" class="ghost" title="Download the stored device list as CSV">CSV</button>
+          <button id="json-btn" class="ghost" title="Download the stored device list as JSON">JSON</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table id="dev-table">
+          <thead>
+            <tr>
+              <th data-k="ip">IP</th>
+              <th data-k="mac">MAC</th>
+              <th data-k="vendor">Vendor</th>
+              <th data-k="hostname">Hostname</th>
+              <th data-k="type">Type / Model</th>
+              <th data-k="confidence">Conf.</th>
+              <th data-k="ports">Ports</th>
+              <th data-k="last_seen">Last seen</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p id="empty" class="muted hidden">No devices yet — run a scan.</p>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="detail-panel">
+      <div class="panel-head"><h2>Device details</h2></div>
+      <div id="detail" class="muted">Select a device.</div>
+    </section>
+  </main>
+
+  <footer class="muted">
+    Scans your own LAN from this PC · runs locally on 127.0.0.1 ·
+    monitor-mode 802.11 capture is not available on most Windows adapters
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

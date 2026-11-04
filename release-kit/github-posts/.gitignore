@@ -1,0 +1,21 @@
+# node_modules is huge; never commit it
+node_modules/
+
+# Build output — reproducible with `npm run build`
+dist/
+
+# Dev data: vendor DB (auto-downloaded) + local device history
+data/
+
+# Logs and editor noise
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local secrets/env (none used today, but future-proof)
+.env
+.env.*

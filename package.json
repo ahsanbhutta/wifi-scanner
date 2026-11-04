@@ -1,0 +1,27 @@
+{
+  "name": "wifi-scanner",
+  "version": "1.0.0",
+  "description": "Local network device scanner with vendor/model identification (Windows)",
+  "type": "module",
+  "imports": {
+    "#assets": "./src/embedded-assets.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "node build.mjs",
+    "icon": "node scripts/make-icon.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multicast-dns": "^7.2.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "postject": "^1.0.0-alpha.6",
+    "resedit": "^3.1.0"
+  }
+}
