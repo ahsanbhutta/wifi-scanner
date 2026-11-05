@@ -7,9 +7,9 @@ End-to-end steps from this kit to a live GitHub release. Estimated time:
 
 ## 0. One-time decision
 
-- [ ] Replace `<COPYRIGHT HOLDER>` in `LICENSE-MIT.txt` with your name/handle.
-- [ ] In `CHANGELOG.md`, fix the release URL at the bottom
-      (`https://github.com/<OWNER>/<REPO>/…`).
+- [x] Replace `<COPYRIGHT HOLDER>` in `LICENSE-MIT.txt` with your name/handle. *(done: `LICENSE` = ahsanbhutta)*
+- [x] In `CHANGELOG.md`, fix the release URL at the bottom
+      (`https://github.com/<OWNER>/<REPO>/…`). *(done: ahsanbhutta/wifi-scanner)*
 
 ---
 
@@ -30,8 +30,8 @@ Copy-Item "$kit\docs"                  "$repo\docs" -Recurse
 Copy-Item "$kit\winget"                "$repo\winget" -Recurse   # optional but recommended
 ```
 
-- [ ] `README.md`, `LICENSE`, `CHANGELOG.md`, `.gitignore`, `docs/` in place
-- [ ] Screenshot paths resolve: `docs/img/dashboard-full.png` exists and the
+- [x] `README.md`, `LICENSE`, `CHANGELOG.md`, `.gitignore`, `docs/` in place
+- [x] Screenshot paths resolve: `docs/img/dashboard-full.png` exists and the
       README's image link renders
 
 ## 2. Verify the project still works
@@ -43,25 +43,25 @@ npm install
 npm start          # → http://127.0.0.1:3847
 ```
 
-- [ ] Dashboard loads, **Scan network** finds devices
+- [x] Dashboard loads, **Scan network** finds devices
 - [ ] Stop it (Ctrl+C), then:
 
 ```powershell
 npm run build      # → dist\WiFiScanner.exe (~90 MB)
 ```
 
-- [ ] `dist\WiFiScanner.exe` exists (kill any running WiFiScanner first:
+- [x] `dist\WiFiScanner.exe` exists (kill any running WiFiScanner first:
       `Get-Process WiFiScanner | Stop-Process -Force`)
-- [ ] Double-click test: browser opens, scan works, second double-click
+- [x] Double-click test: browser opens, scan works, second double-click
       doesn't start a duplicate
 
 ## 3. Create the GitHub repository
 
-- [ ] New repo, name suggestion: **`wifi-scanner`**
-- [ ] Description: paste from `github-posts/REPO-META.md` (≤350 chars)
-- [ ] Topics: paste from the same file
-- [ ] Add MIT license (or let the pushed `LICENSE` be detected)
-- [ ] Push:
+- [x] New repo, name suggestion: **`wifi-scanner`** → https://github.com/ahsanbhutta/wifi-scanner
+- [x] Description: paste from `github-posts/REPO-META.md` (≤350 chars)
+- [x] Topics: paste from the same file
+- [x] Add MIT license (or let the pushed `LICENSE` be detected)
+- [x] Push:
 
 ```powershell
 cd $repo
@@ -73,7 +73,7 @@ git remote add origin https://github.com/<OWNER>/wifi-scanner.git
 git push -u origin main
 ```
 
-- [ ] Repo page renders: README, screenshot, license, topics
+- [x] Repo page renders: README, screenshot, license, topics
 
 ## 4. Attach the executable as a Release
 
