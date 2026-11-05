@@ -6,7 +6,7 @@ A local web dashboard that scans your WiFi/LAN and identifies attached devices �
 
 ## Quick start — one file, no Node.js needed
 
-1. Download **`WiFiScanner.exe`** from the [latest release](../../releases/latest) (~90 MB).
+1. Download **`WiFiScanner.exe`** from the [latest release](../../releases/latest) (~90 MB) — short on bandwidth? Grab **`WiFiScanner.zip`** (~33 MB) instead and extract it first.
 2. Double-click it. Your browser opens the dashboard at `http://127.0.0.1:3847`.
 3. Press **Scan network**. Devices appear in 20–40 seconds.
 4. Close the console window to stop the scanner.

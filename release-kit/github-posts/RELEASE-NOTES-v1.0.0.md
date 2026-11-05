@@ -1,7 +1,8 @@
 # Release notes — WiFi Scanner v1.0.0
 
 > Paste as the body of the GitHub Release for tag `v1.0.0`.
-> Attach `dist\WiFiScanner.exe` (~90 MB) as the release asset.
+> CI attaches both assets on a tag push: `WiFiScanner.exe` (~90 MB) and
+> `WiFiScanner.zip` (~33 MB).
 
 ---
 
@@ -16,6 +17,8 @@ with confidence + evidence. Windows, one file, no Node.js needed.**
 Grab **`WiFiScanner.exe`** below, double-click, press **Scan network**.
 Your browser opens the dashboard automatically.
 
+- **Low bandwidth?** Take **`WiFiScanner.zip`** (~33 MB) instead — extract
+  it, then run the exe inside. Same program, 63% smaller download.
 - **No installer, no admin rights, no dependencies** — the exe is the whole
   program (~90 MB; it embeds the Node runtime).
 - First download from the internet? Windows shows SmartScreen →

@@ -8,7 +8,8 @@ everyone) or **from source** (for development).
 ## Option A — the executable (no Node.js required)
 
 1. Download `WiFiScanner.exe` (~90 MB) from the
-   [latest release](../../releases/latest).
+   [latest release](../../releases/latest) — or `WiFiScanner.zip`
+   (~33 MB) if you'd rather a smaller download; extract it first.
 2. Double-click it.
 
 That's it. The exe is fully self-contained: no installer, no admin rights,
