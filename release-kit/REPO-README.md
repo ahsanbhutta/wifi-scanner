@@ -126,6 +126,7 @@ src/
 test/                Unit tests (npm test → node:test, 42 tests)
 scripts/
   make-icon.mjs      npm run icon → assets/icon.ico (default art or your PNG)
+  clean.ps1          npm run clean → reclaim disk space (dry-run by default)
 assets/
   icon.ico           exe icon, 7 sizes — replace with your own and rebuild
   icon-preview.png   256px render of the current icon

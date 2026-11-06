@@ -158,6 +158,48 @@ That's the floor for Node SEA. Alternatives and their tradeoffs:
 - **Bundle an installer (Inno Setup/NSIS)** — doesn't shrink anything, but
   gives Start Menu shortcuts and an uninstaller
 
+## Reclaim disk space after building
+
+A build leaves ~110 MB of regenerable files behind (`dist/` +
+`node_modules/`), and installs leave a global npm cache that grows with
+every project. The repo ships `scripts/clean.ps1` for exactly this — it
+deletes only what is reproducible from source and never touches code,
+git history, lockfiles, or your device history database.
+
+```powershell
+npm run clean          # dry run: show what could be freed (nothing deleted)
+npm run clean:yes      # actually delete dist/ + node_modules/
+npm run clean:yes -- -Caches   # ...also purge the global npm/npx/pip caches
+```
+
+Or run it against any other project folder (it's self-contained — copy
+`scripts\clean.ps1` anywhere):
+
+```powershell
+.\scripts\clean.ps1 -Path "D:\other\project" -Yes
+```
+
+| Deleted (rebuildable) | Restored with |
+|---|---|
+| `dist/`, `build/`, `out/`, `coverage/`, … | `npm run build` |
+| `node_modules/`, `.venv/`, … | `npm ci` |
+| npm / npx / pip caches (`-Caches`) | re-downloaded on next install |
+
+| Never deleted | Why |
+|---|---|
+| `src/`, `test/`, `docs/`, `scripts/` | your source |
+| `package.json`, `package-lock.json` | pinned dependencies |
+| `.git/` | history |
+| `data/devices.db`, `data/manuf` | scan history + vendor DB |
+
+So the full cycle after a build session is:
+
+```powershell
+npm run clean:yes -- -Caches    # get the space back
+# ...later...
+npm ci && npm run build         # get the project back
+```
+
 ## Shipping to users
 
 1. Upload `dist\WiFiScanner.exe` as a GitHub Release asset (2 GB limit —

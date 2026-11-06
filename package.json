@@ -10,7 +10,9 @@
     "start": "node server.js",
     "build": "node build.mjs",
     "icon": "node scripts/make-icon.mjs",
-    "test": "node --test"
+    "test": "node --test",
+    "clean": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/clean.ps1",
+    "clean:yes": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/clean.ps1 -Yes"
   },
   "engines": {
     "node": ">=24"
